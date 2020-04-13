@@ -1,9 +1,17 @@
-const initialTodo = {
+import React from "react";
+
+export const initialState = 
+    {
     item: 'Learn about reducers',
     completed: false,
-    id: 123
+    id: Date.now()
 }
 
-const reducer = (state, action) => {
-    return;
+
+
+export const reducer = (state, action) => {
+    switch(action.type) {
+        default:
+            return state;
+    }
 }
