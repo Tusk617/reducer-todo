@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from 'react';
 import {reducer, initialState} from "../reducers/reducer";
+import "./todoList.css"
 
 const List = (props) => {
     console.log(props)
@@ -9,7 +10,7 @@ const List = (props) => {
             className={item.completed ? 'change' : ''}
             onClick={(event) => {
                 event.preventDefault()
-                props.handleComplete(item.id)
+                props.toggleTask(item.id)
             }}>{item.item}</h2>)}
         </div>
     )

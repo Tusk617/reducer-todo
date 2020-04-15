@@ -16,6 +16,20 @@ export const reducer = (state, action) => {
             return {
                 tasks:[...state.tasks, action.payload]
             }
+        case "TOGGLE_TODO":
+            console.log("Toggled")
+            return {
+                ...state,
+                tasks: state.tasks.map(todo => {
+                    if (todo.id === action.payload){
+                        return {
+                            ...todo, completed: !todo.completed
+                        }
+                    } else {
+                        return todo;
+                    }
+                })
+            }
         default:
             return state;
     }
