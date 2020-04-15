@@ -1,13 +1,16 @@
 import React, { useReducer, useState } from 'react';
 import {reducer, initialState} from "../reducers/reducer";
 
-const List = () => {
-
-    const [state, dispatch] = useReducer(reducer, initialState)
-
+const List = (props) => {
+    console.log(props)
     return (
         <div>
-            <p>{state.item}</p>
+        {props.state.map(item => <h2
+            className={item.completed ? 'change' : ''}
+            onClick={(event) => {
+                event.preventDefault()
+                props.handleComplete(item.id)
+            }}>{item.item}</h2>)}
         </div>
     )
 }
