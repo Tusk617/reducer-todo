@@ -24,11 +24,15 @@ function App() {
     dispatch({type:"TOGGLE_TODO", payload: task})
   }
 
+  const clearTask = (task) => {
+    dispatch({type:"REMOVE_TODO", payload: task})
+  }
+
   return (
     <div className="App">
       <h1>Todo List</h1>
       <Form addTask={addTask}/>
-      <List state={state.tasks} toggleTask={toggleTask}/>
+      <List state={state.tasks} toggleTask={toggleTask} clearTask={clearTask}/>
     </div>
   );
 }

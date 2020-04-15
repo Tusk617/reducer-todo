@@ -30,6 +30,11 @@ export const reducer = (state, action) => {
                     }
                 })
             }
+        case "REMOVE_TODO":
+            return {
+                ...state,
+                tasks: state.tasks.filter(tasks => tasks.completed === false)
+            }
         default:
             return state;
     }

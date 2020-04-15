@@ -12,6 +12,10 @@ const List = (props) => {
                 event.preventDefault()
                 props.toggleTask(item.id)
             }}>{item.item}</h2>)}
+            <button onClick={(event) => {
+                event.preventDefault()
+                props.clearTask(event.completed)
+            }}>Clear Todos</button>
         </div>
     )
 }
